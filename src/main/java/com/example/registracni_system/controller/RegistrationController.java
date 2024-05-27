@@ -19,25 +19,25 @@ public class RegistrationController {
     }
 
     @GetMapping("api/v1/user/{id}")
-    public User getUserById(@PathVariable("id") int id) throws SQLException {
-        return registrationService.getUserById(id);
+    public User getUserById(@PathVariable("id") int id,
+                            @RequestParam(value = "detail",required = false) boolean detail) throws SQLException {
 
-    }
+        if (detail){
+        return registrationService.getUserByIdWithDetail(id);}
+        else {
 
-    @GetMapping("api/v1/user/{id}/detail")
-    public User getUserByIdWithDetail(@PathVariable("id") int id) throws SQLException {
-        return registrationService.getUserByIdWithDetail(id);
+        return registrationService.getUserById(id);}
 
     }
 
     @GetMapping("api/v1/users")
-    public List<User> getAllUsers() throws SQLException {
-        return registrationService.getAllUsers();
-    }
+    public List<User> getAllUsers(@RequestParam(value = "detail",required = false) boolean detail) throws SQLException {
 
-    @GetMapping("api/v1/users/detail")
-    public List<User> getAllUsersWithDetails() throws SQLException {
-        return registrationService.getAllUsersWithDetails();
+       if (detail)
+       {return registrationService.getAllUsersWithDetails();}
+       else
+
+       { return registrationService.getAllUsers();}
     }
 
     @PutMapping("api/v1/user/{id}")
