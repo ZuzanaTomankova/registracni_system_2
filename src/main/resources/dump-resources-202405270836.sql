@@ -40,7 +40,6 @@ CREATE TABLE `resourcedistribution` (
 
 LOCK TABLES `resourcedistribution` WRITE;
 /*!40000 ALTER TABLE `resourcedistribution` DISABLE KEYS */;
-INSERT INTO `resourcedistribution` VALUES (1,'Karel','Novák','jXa4g3H7oPq2','9327d7eb-9604-40f5-9f5e-2e961034968b'),(2,'Jana','Dvořáková','yB9fR6tK0wLm','85ebe48a-617f-4858-87c1-a77a61c1b515');
 /*!40000 ALTER TABLE `resourcedistribution` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-15  1:07:52
+-- Dump completed on 2024-05-27  8:36:15
