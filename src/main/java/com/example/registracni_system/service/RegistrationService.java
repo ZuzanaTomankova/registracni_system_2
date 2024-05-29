@@ -1,6 +1,8 @@
 package com.example.registracni_system.service;
 
+import com.example.registracni_system.UuidGenerator;
 import com.example.registracni_system.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
@@ -16,8 +18,10 @@ public class RegistrationService {
 
     public RegistrationService() throws SQLException {
     }
+    @Autowired
+    UuidGenerator uuidGenerator;
     public void createUser(User user)   throws SQLException  {
-        statement.execute("INSERT INTO resourcedistribution VALUES ('"+user.getId()+"','"+user.getName()+"','"+ user.getSurname()+"','"+user.getPersonID()+"','"+user.getUuid()+"')");
+        statement.execute("INSERT INTO resourcedistribution VALUES ('"+user.getId()+"','"+user.getName()+"','"+ user.getSurname()+"','"+user.getPersonID()+"','"+uuidGenerator.generateUuid()+"')");
     }
 
     public User getUserById(int id) throws SQLException {

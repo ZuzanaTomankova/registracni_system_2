@@ -18,6 +18,12 @@ public class User {
         this.uuid = uuid;
     }
 
+    public User(int id, String name, String surname, String personID) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.personID = personID;
+    }
     public User(int id, String name, String surname) {
         this.id = id;
         this.name = name;
